@@ -15,11 +15,12 @@ LOCAL_CFLAGS := -DANDROID_NDK  -fexceptions \
 	-DUNICODE -D_UNICODE -DUNIX_USE_WIN_FILE 
 
 LOCAL_C_INCLUDES := \
-	../../../../CPP/Windows \
-	../../../../CPP/Common \
-	../../../../C \
-	../../../../CPP/myWindows \
--	../../../../CPP/include_windows
+  ../../../../CPP/Windows \
+  ../../../../CPP/Common \
+  ../../../../C \
+  ../../../../CPP \
+  ../../../../CPP/myWindows \
+  ../../../../CPP/include_windows
 
 LOCAL_SRC_FILES := \
   ../../../../CPP/7zip/Archive/Common/OutStreamWithCRC.cpp \
