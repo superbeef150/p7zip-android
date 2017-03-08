@@ -710,7 +710,7 @@ int main() {
   printf("sizeof(void *) : %d\n",(int)sizeof(void *));
   printf("sizeof(size_t) : %d\n",(int)sizeof(size_t));
   printf("sizeof(ptrdiff_t) : %d\n",(int)sizeof(ptrdiff_t));
-  printf("sizeof(off_t) : %d\n",(int)sizeof(off_t));
+  printf("sizeof(off64_t) : %d\n",(int)sizeof(off64_t));
   printf("sizeof(wchar_t) : %d\n",(int)sizeof(wchar_t));
 #ifdef __APPLE_CC__
   printf("sizeof(UniChar) : %d\n",(int)sizeof(UniChar));

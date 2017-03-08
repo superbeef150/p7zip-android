@@ -35,16 +35,16 @@ bool CFileBase::Close()
 
 bool CFileBase::GetLength(UInt64 &length) const
 {
-  off_t curPos = Seek(0, SEEK_CUR);
-  off_t lengthTemp = Seek(0, SEEK_END);
+  off64_t curPos = Seek(0, SEEK_CUR);
+  off64_t lengthTemp = Seek(0, SEEK_END);
   Seek(curPos, SEEK_SET);
   length = (UInt64)lengthTemp;
   return true;
 }
 
-off_t CFileBase::Seek(off_t distanceToMove, int moveMethod) const
+off64_t CFileBase::Seek(off64_t distanceToMove, int moveMethod) const
 {
-  return ::lseek(_handle, distanceToMove, moveMethod);
+  return ::lseek64(_handle, distanceToMove, moveMethod);
 }
 
 /////////////////////////

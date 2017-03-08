@@ -577,7 +577,7 @@ typedef unsigned long int __ino_t;
 typedef unsigned long int __ino64_t;
 typedef unsigned int __mode_t;
 typedef unsigned long int __nlink_t;
-typedef long int __off_t;
+typedef long int __off64_t;
 typedef long int __off64_t;
 typedef int __pid_t;
 typedef struct { int __val[2]; } __fsid_t;
@@ -627,7 +627,7 @@ typedef unsigned long int __syscall_ulong_t;
 
 
 
-typedef __off64_t __loff_t;
+typedef __off64_t __loff64_t;
 typedef __quad_t *__qaddr_t;
 typedef char *__caddr_t;
 

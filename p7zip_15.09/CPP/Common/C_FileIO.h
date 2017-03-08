@@ -29,7 +29,7 @@ public:
   ~CFileBase() { Close(); }
   bool Close();
   bool GetLength(UInt64 &length) const;
-  off_t Seek(off_t distanceToMove, int moveMethod) const;
+  off64_t Seek(off64_t distanceToMove, int moveMethod) const;
 };
 
 class CInFile: public CFileBase

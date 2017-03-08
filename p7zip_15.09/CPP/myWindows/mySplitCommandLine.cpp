@@ -195,7 +195,7 @@ void showP7zipInfo(CStdOutStream *so)
   if (global_use_utf16_conversion) *so << "on";
   else                             *so << "off";
   *so << ",HugeFiles=";
-  if (sizeof(off_t) >= 8) *so << "on,";
+  if (sizeof(off64_t) >= 8) *so << "on,";
   else                    *so << "off,";
   *so << bits << " bits,";
   int nbcpu = NWindows::NSystem::GetNumberOfProcessors();

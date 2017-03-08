@@ -278,7 +278,7 @@ STDMETHODIMP CInFileStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPos
   
   #else
   
-  off_t res = File.Seek((off_t)offset, seekOrigin);
+  off64_t res = File.Seek((off64_t)offset, seekOrigin);
   if (res == -1)
     return E_FAIL;
   if (newPosition)
@@ -380,7 +380,7 @@ STDMETHODIMP COutFileStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPo
   
   #else
   
-  off_t res = File.Seek((off_t)offset, seekOrigin);
+  off64_t res = File.Seek((off64_t)offset, seekOrigin);
   if (res == -1)
     return E_FAIL;
   if (newPosition)

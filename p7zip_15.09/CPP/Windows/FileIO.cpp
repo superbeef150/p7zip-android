@@ -201,16 +201,16 @@ bool CFileBase::GetLength(UINT64 &length) const
   }
 #endif
 
-  off_t pos_cur = ::lseek(_fd, 0, SEEK_CUR);
-  if (pos_cur == (off_t)-1)
+  off64_t pos_cur = ::lseek64(_fd, 0, SEEK_CUR);
+  if (pos_cur == (off64_t)-1)
     return false;
 
-  off_t pos_end = ::lseek(_fd, 0, SEEK_END);
-  if (pos_end == (off_t)-1)
+  off64_t pos_end = ::lseek64(_fd, 0, SEEK_END);
+  if (pos_end == (off64_t)-1)
     return false;
 
-  off_t pos_cur2 = ::lseek(_fd, pos_cur, SEEK_SET);
-  if (pos_cur2 == (off_t)-1)
+  off64_t pos_cur2 = ::lseek64(_fd, pos_cur, SEEK_SET);
+  if (pos_cur2 == (off64_t)-1)
     return false;
 
   length = (UINT64)pos_end;
@@ -247,11 +247,11 @@ bool CFileBase::Seek(INT64 distanceToMove, DWORD moveMethod, UINT64 &newPosition
 
   bool ret = true;
 
-  off_t pos = (off_t)distanceToMove;
+  off64_t pos = (off64_t)distanceToMove;
 
-  off_t newpos = ::lseek(_fd,pos,moveMethod);
+  off64_t newpos = ::lseek64(_fd,pos,moveMethod);
 
-  if (newpos == ((off_t)-1)) {
+  if (newpos == ((off64_t)-1)) {
     ret = false;
   } else {
     newPosition = (UINT64)newpos;
@@ -436,8 +436,8 @@ bool COutFile::SetEndOfFile() throw()
 
   bool bret = false;
 
-  off_t pos_cur = lseek(_fd, 0, SEEK_CUR);
-  if (pos_cur != (off_t)-1) {
+  off64_t pos_cur = lseek64(_fd, 0, SEEK_CUR);
+  if (pos_cur != (off64_t)-1) {
     int iret = ftruncate(_fd, pos_cur);
     if (iret == 0) bret = true;
   }
